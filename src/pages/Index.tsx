@@ -1,14 +1,12 @@
-
 import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
 import ServiceCard from '@/components/ServiceCard';
 import ArticleCard from '@/components/ArticleCard';
 import Banner from '@/components/Banner';
 import MenuSection from '@/components/MenuSection';
-import { ArrowRight, Search } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-// Mock data - in a real app, this would come from an API
 const featuredServices = [
   {
     id: '1',
@@ -60,10 +58,8 @@ const recentArticles = [
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    // Simulate loading data
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1500);
@@ -73,37 +69,13 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Banner Section */}
-      <Banner />
+      <div className="px-4">
+        <Banner />
+      </div>
 
-      {/* Menu Section */}
       <MenuSection />
 
-      {/* Search Section */}
-      <section className="flex flex-col items-center text-center mb-10 animate-fade-in">
-        <h1 className="text-3xl font-bold tracking-tight mb-3">
-          Professional Services for Your Digital Needs
-        </h1>
-        <p className="text-muted-foreground mb-6 max-w-md">
-          Discover top-quality digital services to help your business grow and succeed in the online world.
-        </p>
-        
-        <div className="w-full max-w-md relative">
-          <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-            <Search className="h-4 w-4 text-muted-foreground" />
-          </div>
-          <input
-            type="text"
-            placeholder="Search for services..."
-            className="w-full pl-10 pr-4 py-3 rounded-full border border-input bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </div>
-      </section>
-
-      {/* Featured Services Section */}
-      <section className="mb-10">
+      <section className="mb-10 px-4">
         <div className="flex justify-between items-center mb-5">
           <h2 className="text-xl font-semibold">Featured Services</h2>
           <Link 
@@ -147,8 +119,7 @@ const Index = () => {
         )}
       </section>
 
-      {/* Recent Articles Section */}
-      <section className="mb-8">
+      <section className="mb-8 px-4">
         <div className="flex justify-between items-center mb-5">
           <h2 className="text-xl font-semibold">Recent Articles</h2>
           <Link 
@@ -192,8 +163,7 @@ const Index = () => {
         )}
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-accent rounded-2xl p-6 text-center">
+      <section className="bg-accent rounded-2xl p-6 mx-4 text-center">
         <h2 className="text-xl font-semibold mb-3">Need a Custom Service?</h2>
         <p className="text-muted-foreground mb-4">
           Contact us for personalized solutions tailored to your specific business requirements.
