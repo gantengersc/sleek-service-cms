@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
 import ServiceCard from '@/components/ServiceCard';
 import ArticleCard from '@/components/ArticleCard';
+import Banner from '@/components/Banner';
+import MenuSection from '@/components/MenuSection';
 import { ArrowRight, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -71,7 +73,13 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Banner Section */}
+      <Banner />
+
+      {/* Menu Section */}
+      <MenuSection />
+
+      {/* Search Section */}
       <section className="flex flex-col items-center text-center mb-10 animate-fade-in">
         <h1 className="text-3xl font-bold tracking-tight mb-3">
           Professional Services for Your Digital Needs
@@ -108,10 +116,10 @@ const Index = () => {
         </div>
 
         {isLoading ? (
-          <div className="grid grid-cols-1 gap-4">
-            {[1, 2, 3].map((i) => (
+          <div className="grid grid-cols-2 gap-4">
+            {[1, 2].map((i) => (
               <div key={i} className="rounded-xl overflow-hidden border shadow-sm animate-pulse">
-                <div className="h-48 bg-gray-200"></div>
+                <div className="h-32 bg-gray-200"></div>
                 <div className="p-4">
                   <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
                   <div className="h-3 bg-gray-200 rounded w-full mb-2"></div>
@@ -121,8 +129,8 @@ const Index = () => {
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-4">
-            {featuredServices.map((service) => (
+          <div className="grid grid-cols-2 gap-4">
+            {featuredServices.slice(0, 2).map((service) => (
               <ServiceCard
                 key={service.id}
                 id={service.id}

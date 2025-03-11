@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, Star } from 'lucide-react';
@@ -42,38 +41,31 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           loading="lazy"
         />
         {featured && (
-          <div className="absolute top-3 left-3">
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary text-white">
+          <div className="absolute top-2 left-2">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary text-white">
               Featured
             </span>
           </div>
         )}
         {price && (
-          <div className="absolute bottom-3 right-3">
-            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-white/90 backdrop-blur-sm text-primary">
+          <div className="absolute bottom-2 right-2">
+            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-white/90 backdrop-blur-sm text-primary">
               {price}
             </span>
           </div>
         )}
       </div>
-      <div className="flex flex-col p-4 flex-1">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="font-medium text-base line-clamp-1">{title}</h3>
+      <div className="p-3 flex-1">
+        <div className="flex justify-between items-start gap-1 mb-1">
+          <h3 className="font-medium text-sm line-clamp-1">{title}</h3>
           {rating > 0 && (
             <div className="flex items-center gap-1 text-amber-500">
-              <Star className="w-4 h-4 fill-amber-500" />
+              <Star className="w-3 h-3 fill-amber-500" />
               <span className="text-xs font-medium">{rating.toFixed(1)}</span>
             </div>
           )}
         </div>
-        <p className="text-sm text-muted-foreground line-clamp-2 mb-2">{description}</p>
-        <div className="mt-auto flex items-center justify-between pt-2">
-          <span className="text-xs text-muted-foreground flex items-center">
-            <Clock className="w-3 h-3 mr-1" />
-            Available now
-          </span>
-          <span className="text-xs font-medium text-primary">View details</span>
-        </div>
+        <p className="text-xs text-muted-foreground line-clamp-2">{description}</p>
       </div>
     </Link>
   );
