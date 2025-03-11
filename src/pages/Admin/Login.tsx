@@ -38,7 +38,7 @@ const Login = () => {
   };
   
   return (
-    <Layout hideNavbar>
+    <Layout hideNavbar={true}>
       <div className="flex min-h-screen flex-col justify-center py-12 px-6 animate-fade-in">
         <div className="mb-10 text-center">
           <div className="flex justify-center mb-2">

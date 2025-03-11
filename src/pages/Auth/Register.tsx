@@ -74,7 +74,7 @@ const Register = () => {
   };
 
   return (
-    <Layout hideNavbar={false} className="items-center justify-center">
+    <Layout className="items-center justify-center">
       <div className="w-full max-w-md px-4 py-8 animate-fade-up">
         <Card className="border-border/40 shadow-sm">
           <CardHeader className="space-y-1 text-center">
